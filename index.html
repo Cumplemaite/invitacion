@@ -1,0 +1,84 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¡Cumple 8 de Maite!</title>
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Ajustes estrictos para evitar cualquier scroll y fusionar el fondo */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100dvh; /* Usa el alto dinámico del celular (ignora barras de navegación) */
+            overflow: hidden; 
+            background-color: #ffdae1; /* Color exacto del borde de tu imagen para que se fusione */
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Animación suave para llamar la atención al botón de WhatsApp */
+        .latido {
+            animation: latido 2.5s infinite;
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* Efecto profesional al tocar los botones */
+        .btn-click:active {
+            transform: scale(0.96) !important;
+            transition: transform 0.1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center">
+
+    <!-- Contenedor Principal Limitado al ancho de un celular -->
+    <div class="w-full max-w-[450px] h-[100dvh] flex flex-col bg-[#ffdae1] relative">
+        
+        <!-- ZONA DE IMAGEN: 
+             object-top ancla la imagen arriba. 
+             object-contain asegura que no se recorte nada. 
+             flex-1 le permite usar todo el espacio disponible. -->
+        <img src="https://i.ibb.co/1GrX339D/file-00000000f3d4720e8b4a05c2b9e1c988.png" 
+             alt="Invitación Cumpleaños Maite" 
+             class="w-full flex-1 min-h-0 object-contain object-top">
+        
+        <!-- ZONA DE BOTONES:
+             Fijos en la parte inferior, sobre el espacio sobrante rosa -->
+        <div class="w-full shrink-0 px-6 pb-8 pt-2 flex flex-col gap-3.5 z-10">
+            
+            <!-- Botón de Ubicación -->
+            <a href="https://maps.app.goo.gl/PNRuRKNf6qTVUVzP9?g_st=ac" target="_blank" rel="noopener noreferrer" 
+               class="btn-click flex items-center justify-center gap-3 w-full py-4 px-4 rounded-[20px] text-white bg-[#4285F4] text-[15px] font-bold shadow-[0_5px_15px_rgba(66,133,244,0.3)]">
+                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                VER UBICACIÓN
+            </a>
+
+            <!-- Botón de WhatsApp -->
+            <a href="https://wa.me/56930667621?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20número%208%20de%20Maite.%20🥳" target="_blank" rel="noopener noreferrer" 
+               class="btn-click latido flex items-center justify-center gap-3 w-full py-4 px-4 rounded-[20px] text-white bg-[#25D366] text-[15px] font-bold shadow-[0_5px_15px_rgba(37,211,102,0.3)]">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                CONFIRMAR ASISTENCIA
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+```
